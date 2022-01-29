@@ -10,16 +10,20 @@
     <title>TAMUhack Jokes</title>
 
     <!-- CSS Goes Here -->
-    <!-- #[id]: {
-        
-    } -->
-    <!-- <style>
-        /* #joke-span {
-            color: blue;
-            font-size: 40px;
-        }  */
-    </style> -->
+    <!-- Select ID: 
+        #[id]: {
+            ... CSS
+        }
 
+        Select Class:
+        .[class_name]: {
+            ... CSS
+        }
+    -->
+
+    <!-- 
+        Documentation: https://bulma.io/documentation/overview/start/
+     -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
 
 
@@ -38,6 +42,11 @@
 
     </div> -->
 
+    <!-- 
+        Message: https://bulma.io/documentation/components/message/
+        Title: https://bulma.io/documentation/elements/title/
+        Button: https://bulma.io/documentation/elements/button/
+     -->
     <div class="container">
         <br />
         <h2 class="title is-2">Random Joke</h2>
@@ -60,14 +69,18 @@
       
 
 
+    <!-- Local JavaScript Import -->
     <script src="jokes.js"></script>
+    
     <!-- JavaScript Goes Here -->
     <script>
 
     var size_of_jokes = jokes.length
 
+    // Random int number in array
     var random_number = Math.floor(Math.random() * size_of_jokes)
 
+    // Select random number from array
     var joke = jokes[random_number]
 
     // https://www.w3schools.com/js/js_htmldom_document.asp

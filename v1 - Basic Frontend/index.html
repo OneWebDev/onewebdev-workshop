@@ -10,10 +10,18 @@
     <title>TAMUhack Jokes</title>
 
     <!-- CSS Goes Here -->
-    <!-- #[id]: {
-        
-    } -->
+    <!-- Select ID: 
+        #[id]: {
+            ... CSS
+        }
+
+        Select Class:
+        .[class_name]: {
+            ... CSS
+        }
+    -->
     <style>
+        /* CSS */
         #joke-span {
             color: blue;
             font-size: 40px;
@@ -38,6 +46,10 @@
     <!-- JavaScript Goes Here -->
     <script>
     
+    // JavaScript Object
+    // Key : Value
+    // 'joke' = key
+    // 'This is a placeholder text' = value
     var joke = {
         "joke": "This is a placeholder text.",
         "university": "Texas A&M University"
@@ -47,6 +59,7 @@
     var joke_span = document.getElementById("joke-span")
     var uni_span = document.getElementById("uni-span")
 
+    // joke['joke'] = "This is a placeholder text."
     joke_span.textContent = joke['joke']
     uni_span.textContent = joke['university']
 
