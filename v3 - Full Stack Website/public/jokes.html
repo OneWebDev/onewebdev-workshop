@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata, the below is standard. Browsers use this to configure settings -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- What text people see on the tab -->
+    <title>TAMUhack Jokes</title>
+
+    <!-- CSS Goes Here -->
+    <!-- #[id]: {
+        
+    } -->
+    <!-- <style>
+        /* #joke-span {
+            color: blue;
+            font-size: 40px;
+        }  */
+    </style> -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
+
+</head>
+<body>
+
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div -->
+    <!-- <div>
+        <span id="joke-span">
+            [Placeholder: This is where I want the joke to display]
+        </span>
+        <br />
+        <span id="uni-span">
+            [Placeholder: This is where the university is displayed]
+        </span>
+
+    </div> -->
+
+    <div class="container">
+        <br />
+        <h2 class="title is-2">Random Joke</h2>
+        <a href="/">
+            <button class="button is-info">Best Jokes</button>
+        </a>
+        <br />
+        <br />
+        <article class="message is-medium">
+            <div class="message-header">
+              <p> Student from 
+                <span id="uni-span"></span>
+              </p>
+              <button class="delete" aria-label="delete" onclick="window.location.reload()"></button>
+            </div>
+            <div class="message-body">
+                <span id="joke-span"></span>
+            </div>
+        </article>
+
+        <button class="button is-info" onclick="window.location.reload()">New Joke</button>
+        <button class="button is-primary" onclick="upvote_joke()">Upvote Joke</button>
+    </div>
+      
+
+
+    <script src="./jokes.js"></script>
+    <!-- JavaScript Goes Here -->
+    <script>
+
+    var size_of_jokes = jokes.length
+
+    var random_number = Math.floor(Math.random() * size_of_jokes)
+
+    var joke = jokes[random_number]
+
+    // https://www.w3schools.com/js/js_htmldom_document.asp
+    var joke_span = document.getElementById("joke-span")
+    var uni_span = document.getElementById("uni-span")
+
+    joke_span.textContent = joke['joke']
+    uni_span.textContent = joke['university']
+
+    </script>
+
+
+    <!-- Code to interact with the backend -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+        var upvote_joke = () => {
+            axios.post('/upvote-joke', {
+                id: joke['id'],
+                joke: joke['joke']
+            })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        }
+    </script>
+</body>
+</html>

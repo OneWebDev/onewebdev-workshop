@@ -1,0 +1,18 @@
+{
+  "name": "th-jokes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "lokijs": "^1.5.12",
+    "morgan": "^1.10.0"
+  }
+}

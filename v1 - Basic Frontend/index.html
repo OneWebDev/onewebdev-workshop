@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata, the below is standard. Browsers use this to configure settings -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- What text people see on the tab -->
+    <title>TAMUhack Jokes</title>
+
+    <!-- CSS Goes Here -->
+    <!-- #[id]: {
+        
+    } -->
+    <style>
+        #joke-span {
+            color: blue;
+            font-size: 40px;
+        } 
+    </style>
+
+</head>
+<body>
+
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div -->
+    <div>
+        <span id="joke-span">
+            [Placeholder: This is where I want the joke to display]
+        </span>
+        <br />
+        <span id="uni-span">
+            [Placeholder: This is where the university is displayed]
+        </span>
+
+    </div>
+
+    <!-- JavaScript Goes Here -->
+    <script>
+    
+    var joke = {
+        "joke": "This is a placeholder text.",
+        "university": "Texas A&M University"
+    }
+
+    // https://www.w3schools.com/js/js_htmldom_document.asp
+    var joke_span = document.getElementById("joke-span")
+    var uni_span = document.getElementById("uni-span")
+
+    joke_span.textContent = joke['joke']
+    uni_span.textContent = joke['university']
+
+    </script>
+</body>
+</html>
